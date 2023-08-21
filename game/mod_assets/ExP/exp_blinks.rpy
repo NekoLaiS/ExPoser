@@ -99,44 +99,44 @@ image _say_blink_a:
     renpy.random.randint(20, 100)*0.1
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_af.png"
+        paths.sayori("blink", "blink_af")
         0.035
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_af.png"
+        paths.sayori("blink", "blink_af")
         0.065
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_af.png"
+        paths.sayori("blink", "blink_af")
         0.095
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_af.png"
+        paths.sayori("blink", "blink_af")
         0.035
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
         alpha 0.0
         0.15
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_af.png"
+        paths.sayori("blink", "blink_af")
         0.035
-        "mod_assets/ExP/blinks/_blink_am.png"
+        paths.sayori("blink", "blink_am")
         0.015
     repeat
 
@@ -145,43 +145,43 @@ image _say_blink_t_a:
     renpy.random.randint(30, 60)*0.1
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_t_af.png"
+        paths.sayori("blink", "blink_t_af")
         0.035
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_t_af.png"
+        paths.sayori("blink", "blink_t_af")
         0.065
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_t_af.png"
+        paths.sayori("blink", "blink_t_af")
         0.095
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
     choice:
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_t_af.png"
+        paths.sayori("blink", "blink_t_af")
         0.035
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
         alpha 0.0
         0.15
         alpha 1.0
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
-        "mod_assets/ExP/blinks/_blink_t_af.png"
+        paths.sayori("blink", "blink_t_af")
         0.035
-        "mod_assets/ExP/blinks/_blink_t_am.png"
+        paths.sayori("blink", "blink_t_am")
         0.015
     repeat

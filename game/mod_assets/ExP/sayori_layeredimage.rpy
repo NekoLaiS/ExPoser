@@ -1,12 +1,17 @@
 
-init python:
-    from store import exp_core
-    s_paths = exp_core.ExPPaths("mod_assets/ExP/sayori")
-
 layeredimage sayori base: 
     at Flatten
-    
-    always s_paths + "/facebase.png" #Always need this face.
+    # at AutofocusDisplayable(name="sayori") # if you used autofocus
+    always paths.sayori("bases", "base", "face") #Always need this face.
+
+
+    # Autofocus function on changing the color of characters depending on the time of day.
+    # group autofocus_coloring:
+    #     attribute day default null
+    #     attribute dawn null
+    #     attribute sunset null
+    #     attribute night null
+    #     attribute evening null
 
     group outfit:
         attribute uniform default null
@@ -19,192 +24,199 @@ layeredimage sayori base:
         attribute shy null # Blushing (shy used as synomyn)
         attribute shyeh null # Both Shy and Awkward
     
-    # Left Half
-    group left:
-        attribute ldown default if_any(["uniform"]):
-            s_paths + "/base/body/uniform_ldown.png"
-        attribute ldown default if_any(["casual"]):
-            s_paths + "/base/body/casual_ldown.png"
-        attribute lup if_any(["uniform"]):
-            s_paths + "/base/body/uniform_lup.png"
-        attribute lpoint if_any(["casual"]):
-            s_paths + "/base/body/casual_luo.png"
+    #Left arm variants
+    group left if_any(["uniform"]):
+        attribute ldown default:
+            paths.sayori("bases", "base", "uniform_left_down")
+        attribute lup:
+            paths.sayori("bases", "base", "uniform_left_up")
     
-    # Right Half
-    group right:
-        attribute rdown default if_any(["uniform"]):
-            s_paths + "/base/body/uniform_rdown.png"
-        attribute rdown default if_any(["casual"]):
-            s_paths + "/base/body/casual_rdown.png"
-        attribute rup if_any(["uniform"]):
-            s_paths + "/base/body/uniform_rup.png"
-        attribute rup if_any(["casual"]):
-            s_paths + "/base/body/casual_rup.png"
+    group left if_any(["casual"]):
+        attribute ldown default:
+            paths.sayori("bases", "base", "casual_left_down")
+        attribute lup:
+            paths.sayori("bases", "base", "casual_left_up")
+    
+    
+    
+    #Right arm variants
+    group right if_any(["uniform"]):
+        attribute rdown default:
+            paths.sayori("bases", "base", "uniform_right_down")
+        attribute rup:
+            paths.sayori("bases", "base", "uniform_right_up")
+    
+    group right if_any(["casual"]):
+        attribute rdown default:
+            paths.sayori("bases", "base", "casual_right_down")
+        attribute rup:
+            paths.sayori("bases", "base", "casual_right_up")
     
     # Nose
     group nose:
         attribute nose default if_any(["norm"]): # default nose
-            s_paths + "/base/noses/nose1.png"
+            paths.sayori("nose", "base", "nose1")
         attribute nose default if_any(["eh"]): # default nose when "awkward"
-            s_paths + "/base/noses/nose2.png"
+            paths.sayori("nose", "base", "nose2")
         attribute nose default if_any(["shy"]): # default nose when "blushing"
-            s_paths + "/base/noses/nose3.png"
+            paths.sayori("nose", "base", "nose3")
         attribute nose default if_any(["shyeh"]): # default nose when "blushing and awkward"
-            s_paths + "/base/noses/nose4.png"
+            paths.sayori("nose", "base", "nose4")
         
         attribute nose1:
-            s_paths + "/base/noses/nose1.png"
+            paths.sayori("nose", "base", "nose1")
         attribute nose2:
-            s_paths + "/base/noses/nose2.png"
+            paths.sayori("nose", "base", "nose2")
         attribute nose3:
-            s_paths + "/base/noses/nose3.png"
+            paths.sayori("nose", "base", "nose3")
         attribute nose4:
-            s_paths + "/base/noses/nose4.png"
+            paths.sayori("nose", "base", "nose4")
         attribute nose5:
-            s_paths + "/base/noses/nose5.png"
+            paths.sayori("nose", "base", "nose5")
 
     # Mouth
     group mouth:
         attribute mouth_a:
-            s_paths + "/base/mouth/mouth_a.png"
+            paths.sayori("mouth", "base", "mouth_a")
         attribute mouth_b:
-            s_paths + "/base/mouth/mouth_b.png"
+            paths.sayori("mouth", "base", "mouth_b")
         attribute mouth_c:
-            s_paths + "/base/mouth/mouth_c.png"
+            paths.sayori("mouth", "base", "mouth_c")
         attribute mouth_d:
-            s_paths + "/base/mouth/mouth_d.png"
+            paths.sayori("mouth", "base", "mouth_d")
         attribute mouth_e:
-            s_paths + "/base/mouth/mouth_e.png"
+            paths.sayori("mouth", "base", "mouth_e")
         attribute mouth_f:
-            s_paths + "/base/mouth/mouth_f.png"
+            paths.sayori("mouth", "base", "mouth_f")
         attribute mouth_g:
-            s_paths + "/base/mouth/mouth_g.png"
+            paths.sayori("mouth", "base", "mouth_g")
         attribute mouth_h:
-            s_paths + "/base/mouth/mouth_h.png"
+            paths.sayori("mouth", "base", "mouth_h")
         attribute mouth_i:
-            s_paths + "/base/mouth/mouth_i.png"
+            paths.sayori("mouth", "base", "mouth_i")
         attribute mouth_j:
-            s_paths + "/base/mouth/mouth_j.png"
+            paths.sayori("mouth", "base", "mouth_j")
         attribute mouth_k:
-            s_paths + "/base/mouth/mouth_k.png"
+            spaths.sayori("mouth", "base", "mouth_k")
         attribute mouth_l:
-            s_paths + "/base/mouth/mouth_l.png"
+            paths.sayori("mouth", "base", "mouth_l")
         attribute mouth_:
-            s_paths + "/base/mouth/mouth_m.png"
+            paths.sayori("mouth", "base", "mouth_m")
         attribute mouth_n:
-            s_paths + "/base/mouth/mouth_n.png"
+            paths.sayori("mouth", "base", "mouth_n")
         attribute mouth_o:
-            s_paths + "/base/mouth/mouth_o.png"
+            paths.sayori("mouth", "base", "mouth_o")
         attribute mouth_p:
-            s_paths + "/base/mouth/mouth_p.png"
+            paths.sayori("mouth", "base", "mouth_p")
         attribute mouth_q:
-            s_paths + "/base/mouth/mouth_q.png"
+            paths.sayori("mouth", "base", "mouth_q")
         attribute mouth_r:
-            s_paths + "/base/mouth/mouth_r.png"
+            paths.sayori("mouth", "base", "mouth_r")
     
     # Eyes
     group eyes:
         attribute eyes_a:
-            s_paths + "/base/eyes/eyes_a.png"
+            paths.sayori("eyes", "base", "eyes_a")
         attribute eyes_b:
-            s_paths + "/base/eyes/eyes_b.png"
+            paths.sayori("eyes", "base", "eyes_b")
         attribute eyes_c:
-            s_paths + "/base/eyes/eyes_c.png"
+            paths.sayori("eyes", "base", "eyes_c")
         attribute eyes_d:
-            s_paths + "/base/eyes/eyes_d.png"
+            paths.sayori("eyes", "base", "eyes_d")
         attribute eyes_e:
-            s_paths + "/base/eyes/eyes_e.png"
+            paths.sayori("eyes", "base", "eyes_e")
         attribute eyes_f:
-            s_paths + "/base/eyes/eyes_f.png"
+            paths.sayori("eyes", "base", "eyes_f")
         attribute eyes_g:
-            s_paths + "/base/eyes/eyes_g.png"
+            paths.sayori("eyes", "base", "eyes_g")
         attribute eyes_h:
-            s_paths + "/base/eyes/eyes_h.png"
+            paths.sayori("eyes", "base", "eyes_h")
         attribute eyes_i:
-            s_paths + "/base/eyes/eyes_i.png"
+            paths.sayori("eyes", "base", "eyes_i")
         attribute eyes_j:
-            s_paths + "/base/eyes/eyes_j.png"
+            paths.sayori("eyes", "base", "eyes_j")
         attribute eyes_k:
-            s_paths + "/base/eyes/eyes_k.png"
+            paths.sayori("eyes", "base", "eyes_k")
         attribute eyes_l:
-            s_paths + "/base/eyes/eyes_l.png"
+            paths.sayori("eyes", "base", "eyes_l")
         attribute eyes_m:
-            s_paths + "/base/eyes/eyes_m.png"
+            paths.sayori("eyes", "base", "eyes_m")
         attribute eyes_n:
-            s_paths + "/base/eyes/eyes_n.png"
+            paths.sayori("eyes", "base", "eyes_n")
         attribute eyes_o:
-            s_paths + "/base/eyes/eyes_o.png"
+            paths.sayori("eyes", "base", "eyes_o")
         attribute eyes_p:
-            s_paths + "/base/eyes/eyes_p.png"
+            paths.sayori("eyes", "base", "eyes_p")
         attribute eyes_q:
-            s_paths + "/base/eyes/eyes_q.png"
+            paths.sayori("eyes", "base", "eyes_q")
         attribute eyes_r:
-            s_paths + "/base/eyes/eyes_r.png"
+            paths.sayori("eyes", "base", "eyes_r")
         attribute eyes_s:
-            s_paths + "/base/eyes/eyes_s.png"
+            paths.sayori("eyes", "base", "eyes_s")
         attribute eyes_t:
-            s_paths + "/base/eyes/eyes_t.png"
+            paths.sayori("eyes", "base", "eyes_t")
         attribute eyes_u:
-            s_paths + "/base/eyes/eyes_u.png"
+            paths.sayori("eyes", "base", "eyes_u")
     
     group eyebrows:
         ### Default Eyebrows
         attribute brow default if_any(["fine", "happy", "lightly_amazed", "flustered", "shocked", "neut","happ","lsur","flus","shoc"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1a.png"
+            paths.sayori("brows", "base", "b1a")
         attribute brow default if_any(["crying", "panicked", "yandere", "tense", "sad","cry","pani","yand","nerv"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1b.png"
+            paths.sayori("brows", "base", "b1b")
         attribute brow default if_any(["laughing", "very_amazed", "unease", "alluring", "laug","vsur","worr","sedu"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1c.png"
+            paths.sayori("brows", "base", "b1c")
         attribute brow default if_any(["annoyed", "anno","pout"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1d.png"
+            paths.sayori("brows", "base", "b1d")
         attribute brow default if_any(["angry", "angr","vang"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1e.png"
+            paths.sayori("brows", "base", "b1e")
         attribute brow default if_any(["curious", "doubtful", "curi","doub"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1f.png"
+            paths.sayori("brows", "base", "b1f")
         
         ### The following brows are for moods that differ between open and closed eyes:
         attribute brow default if_any(["aloof", "dist"]) if_all(["open_eyes"]) if_not(["closed_eyes", "ce"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2a.png"
+            paths.sayori("brows", "base", "b2a")
         attribute brow default if_any(["aloof", "dist"]) if_all(["closed_eyes"]) if_not(["open_eyes", "oe"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
+            paths.sayori("brows", "base", "b3c")
         
         attribute brow default if_any(["aloof", "dist"]) if_all(["oe"]) if_not(["closed_eyes", "ce"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2a.png"
+            paths.sayori("brows", "base", "b2a")
         attribute brow default if_any(["aloof", "dist"]) if_all(["ce"]) if_not(["open_eyes", "oe"]):
-            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
+            paths.sayori("brows", "base", "b3c")
         
     # Eyebrows
     group eyebrows:
         attribute brow_a:
-            s_paths + "/base/eyebrows/eyebrows_a.png"
+            paths.sayori("brows", "base", "eyebrows_a")
         attribute brow_b:
-            s_paths + "/base/eyebrows/eyebrows_b.png"
+            paths.sayori("brows", "base", "eyebrows_b")
         attribute brow_c:
-            s_paths + "/base/eyebrows/eyebrows_c.png"
+            paths.sayori("brows", "base", "eyebrows_c")
         attribute brow_d:
-            s_paths + "/base/eyebrows/eyebrows_d.png"
+            paths.sayori("brows", "base", "eyebrows_d")
         attribute brow_e:
-            s_paths + "/base/eyebrows/eyebrows_e.png"
+            paths.sayori("brows", "base", "eyebrows_e")
         attribute brow_f:
-            s_paths + "/base/eyebrows/eyebrows_f.png"
+            paths.sayori("brows", "base", "eyebrows_f")
         attribute brow_g:
-            s_paths + "/base/eyebrows/eyebrows_g.png"
+            paths.sayori("brows", "base", "eyebrows_g")
         attribute brow_h:
-            s_paths + "/base/eyebrows/eyebrows_h.png"
+            paths.sayori("brows", "base", "eyebrows_h")
         attribute brow_i:
-            s_paths + "/base/eyebrows/eyebrows_i.png"
+            paths.sayori("brows", "base", "eyebrows_i")
         attribute brow_j if_any(["eyes_o","eyes_p","eyes_q","eyes_r","eyes_s"]):
-            s_paths + "/base/eyebrows/eyebrows_j.png"
+            paths.sayori("brows", "base", "eyebrows_j")
         attribute brow_k if_any(["eyes_o","eyes_p","eyes_q","eyes_r","eyes_s"]):
-            s_paths + "/base/eyebrows/eyebrows_k.png"
+            paths.sayori("brows", "base", "eyebrows_k")
         attribute brow_l if_any(["eyes_o","eyes_p","eyes_q","eyes_r","eyes_s"]):
-            s_paths + "/base/eyebrows/eyebrows_l.png"
+            paths.sayori("brows", "base", "eyebrows_l")
     
     #This group is intentionally last on this list, so it will render over top 
     # of every other thing on the face.
     group special:
         attribute s_scream:
-            s_paths + "/base/special/special_scream.png"
+            paths.sayori("bases", "base", "special_scream")
+
 
     ## For use if NBE assets is installed
     # group blink:
@@ -216,7 +228,7 @@ layeredimage sayori base:
 layeredimage sayori tap: 
     at Flatten
 
-    always s_paths + "/tap_facebase.png"
+    always paths.sayori("bases", "tapping", "face")
 
     group outfit:
         attribute uniform default null
@@ -231,64 +243,65 @@ layeredimage sayori tap:
     
     group body:
         attribute uniform default if_any(["uniform"]):
-            s_paths + "tap/body/uniform_body.png"
+            paths.sayori("bases", "tapping", "uniform_body")
         attribute casual default if_any(["casual"]):
-            s_paths + "tap/body/casual_body.png"
+            paths.sayori("bases", "tapping", "casual_body")
 
     group nose:
         attribute nose default if_any(["norm"]): #default nose
-            m_paths + "/lean/nose/nose1.png"
+            paths.sayori("nose", "tapping", "nose1")
         attribute nose default if_any(["eh"]): #default nose when "awkward"
-            m_paths + "/lean/nose/nose2.png"
+            paths.sayori("nose", "tapping", "noce2")
         attribute nose default if_any(["shy"]): #default nose when "blushing"
-            m_paths + "/lean/nose/nose3.png"
+            paths.sayori("nose", "tapping", "nose3")
         attribute nose default if_any(["shyeh"]): #default nose when both "blushing" and "awkward"
-            m_paths + "/lean/nose/nose4.png"
+            paths.sayori("nose", "tapping", "nose4")
         attribute nose default if_any(["vshy"]): #full face blush, obscures eyes/eyebrows.
-            m_paths + "/lean/nose/nose5.png"
+            paths.sayori("nose", "tapping", "nose5")
 
         attribute nose1:
-            m_paths + "/lean/nose/nose1.png"
+            paths.sayori("nose", "tapping", "nose1")
         attribute nose2:
-            m_paths + "/lean/nose/nose2.png"
+            paths.sayori("nose", "tapping", "nose2")
         attribute nose3:
-            m_paths + "/lean/nose/nose3.png"
+            paths.sayori("nose", "tapping", "nose3")
         attribute nose4:
-            m_paths + "/lean/nose/nose4.png"
+            paths.sayori("nose", "tapping", "nose4")
         attribute nose5:
-            m_paths + "/lean/nose/nose5.png"
+            paths.sayori("nose", "tapping", "nose5")
     
     group mouth:
         attribute mouth_a:
-            m_paths + "/lean/mouth/mouth_a.png"
+            paths.sayori("mouth", "tapping", "mouth_a")
         attribute mouth_b:
-            m_paths + "/lean/mouth/mouth_b.png"
+            paths.sayori("mouth", "tapping", "mouth_b")
         attribute mouth_c:
-            m_paths + "/lean/mouth/mouth_c.png"
+            paths.sayori("mouth", "tapping", "mouth_c")
         attribute mouth_d:
-            m_paths + "/lean/mouth/mouth_d.png"
+            paths.sayori("mouth", "tapping", "mouth_d")
     
     group eyes if_not(["nose5", "vshy"]): #Cannot show if full-face blush is present.
         attribute eyes_a:
-            m_paths + "/lean/eyes/eyes_a.png"
+            paths.sayori("eyes", "tapping", "eyes_a")
         attribute eyes_b:
-            m_paths + "/lean/eyes/eyes_b.png"
+            paths.sayori("eyes", "tapping", "eyes_b")
         attribute eyes_c:
-            m_paths + "/lean/eyes/eyes_c.png"
+            paths.sayori("eyes", "tapping", "eyes_c")
         attribute eyes_d:
-            m_paths + "/lean/eyes/eyes_d.png"
+            paths.sayori("eyes", "tapping", "eyes_d")
         attribute eyes_e:
-            m_paths + "/lean/eyes/eyes_e.png"
+            paths.sayori("eyes", "tapping", "eyes_e")
         attribute eyes_f:
-            m_paths + "/lean/eyes/eyes_f.png"
+            paths.sayori("eyes", "tapping", "eyes_f")
     
     group eyebrows if_not(["nose5", "vshy"]): #Cannot show if full-face blush is present.
         attribute brow_a:
-            m_paths + "/lean/eyebrows/eyebrows_a.png"
+            paths.sayori("brows", "tapping", "eyebrows_a")
         attribute brow_b:
-            m_paths + "/lean/eyebrows/eyebrows_b.png"
+            paths.sayori("brows", "tapping", "eyebrows_b.")
+
         attribute brow_c:
-            m_paths + "/lean/eyebrows/eyebrows_c.png"
+            paths.sayori("brows", "tapping", "eyebrows_c")
     
     ## For use if NBE assets is installed
     # group blink:
